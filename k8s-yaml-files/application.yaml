@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node
-          image: 10.103.35.178:5000/repository/grad-project/k8s_task:latest
+          image: 10.104.189.135:5000/repository/grad-project/k8s_task:latest
           imagePullPolicy: Never
           env:
           - name: PASSWORD
