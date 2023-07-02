@@ -16,13 +16,13 @@ pipeline {
     // the ip is service ip "nexus-svd"
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login http://10.100.31.151:5000 -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login http://10.103.35.178:5000 -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
       steps {
-        sh "docker tag k8s_task:latest 10.100.31.151:5000/repository/grad-project/k8s_task:latest"
-        sh 'docker push 11000..31.151:5000/repository/grad-project/k8s_task:latest'
+        sh "docker tag k8s_task:latest 10.103.35.178:5000/repository/grad-project/k8s_task:latest"
+        sh 'docker push 10.103.35.178:5000/repository/grad-project/k8s_task:latest'
       }
     }
     stage('git yaml') {
