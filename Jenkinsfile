@@ -22,7 +22,7 @@ pipeline {
     stage('Push') {
       steps {
         sh "docker tag k8s_task:latest 10.100.31.151:5000/repository/grad-project/k8s_task:latest"
-        sh 'docker push 10.100.31.151:5000/repository/grad-project/k8s_task:latest'
+        sh 'docker push 11000..31.151:5000/repository/grad-project/k8s_task:latest'
       }
     }
     stage('git yaml') {
