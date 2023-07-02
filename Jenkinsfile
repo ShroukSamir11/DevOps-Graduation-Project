@@ -25,6 +25,13 @@ pipeline {
         sh 'docker push 10.100.31.151:5000/repository/grad-project/k8s_task:latest'
       }
     }
+    stage('git yaml') {
+      steps {
+          git branch: 'main', url: "https://github.com/ShroukSamir11/DevOps-Graduation-Project.git"
+        sh 'ls'
+        sh'pwd'
+      }
+    }
     stage('Creating Persistent Volume'){
         steps{
             sh 'kubectl apply -f k8s-yaml-files/volumes.yaml'
